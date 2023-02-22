@@ -51,7 +51,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className='header d-none d-xl-block' id='myHeader'>
+    <div className='header' id='myHeader'>
       <Box sx={{ flexGrow: 1 }}>
         <Grid container spacing={2}>
           <Grid item xs={6} sm={6}>

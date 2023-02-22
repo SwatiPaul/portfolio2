@@ -7,8 +7,23 @@ import { Button } from "@mui/material";
 import VerifiedIcon from "@mui/icons-material/Verified";
 import MemoryIcon from "@mui/icons-material/Memory";
 import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import { Link } from "react-router-dom";
+import MailIcon from "@mui/icons-material/Mail";
+import TelegramIcon from "@mui/icons-material/Telegram";
+import DownloadIcon from "@mui/icons-material/Download";
 
 const HeroSection = () => {
+  const [sliderRef, setSliderRef] = useState(null);
+
+  const sliderSettings = {
+    arrows: false,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    infinite: false,
+  };
   const skills = [
     {
       id: 1,
@@ -16,7 +31,7 @@ const HeroSection = () => {
     },
     {
       id: 2,
-      skill: "Css",
+      skill: "CSS Modules",
     },
     {
       id: 3,
@@ -24,25 +39,33 @@ const HeroSection = () => {
     },
     {
       id: 4,
-      skill: "React Js",
+      skill: "React Js (Create React App,Router,Props,Component,State,JSX)",
     },
     {
       id: 5,
       skill: "React Native",
     },
+    {
+      id: 6,
+      skill: "Responsive Design",
+    },
+    {
+      id: 7,
+      skill: "Deployment",
+    },
   ];
   const projects = [
     {
       id: 1,
-      image: "./bikash.jpg",
-      subtitle: "hghgh",
+      image: "./Capture.JPG",
+      subtitle: "Software and Web Application site",
       title: "ghgyyyyyyyyyy",
       description: "wwwwwwwwwwwwww",
       link: "https://pythonbootcamp.com",
     },
     {
       id: 2,
-      image: "./bikash.jpg",
+      image: "./Capture2.JPG",
       subtitle: "ppppppppppp",
       title: "uuuuuuuuuuuu",
       description: "ooooooooooooo",
@@ -66,55 +89,33 @@ const HeroSection = () => {
     },
   ];
 
-  const settings = {
-    className: "center",
-    centerMode: true,
-    infinite: true,
-    // centerPadding: "60px",
-    slidesToShow: 3,
-    speed: 500,
-
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
-          infinite: true,
-          dots: true,
-        },
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
-          initialSlide: 2,
-        },
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
-        },
-      },
-    ],
-  };
-  const testimonial = [
+  const hotelCards = [
     {
-      id: 1,
-      image: "./bikash.jpg",
-      quote: "hgggggggggggggggggggggggggggggggg",
-      name: "fsssssssssss",
+      imageSrc:
+        "https://images.unsplash.com/photo-1559508551-44bff1de756b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=387&q=80",
+      title: "Studio Room",
+      description: "Lorem ipsum dolor sit amet, consectur dolori",
     },
     {
-      id: 2,
-      image: "./bikash.jpg",
-      quote: "hgggggggggggggggggggggggggggggggg",
-      name: "fsssssssssss",
+      imageSrc:
+        "https://images.unsplash.com/photo-1616940844649-535215ae4eb1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+      title: "Deluxe Room",
+      description: "Lorem ipsum dolor sit amet, consectur dolori",
+    },
+    {
+      imageSrc:
+        "https://images.unsplash.com/photo-1599619351208-3e6c839d6828?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=872&q=80",
+      title: "King Deluxe Room",
+      description: "Lorem ipsum dolor sit amet, consectur dolori",
+    },
+    {
+      imageSrc:
+        "https://images.unsplash.com/photo-1461092746677-7b4afb1178f6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80",
+      title: "Royal Suite",
+      description: "Lorem ipsum dolor sit amet, consectur dolori",
     },
   ];
+
   return (
     <div className='main_container'>
       <Navbar />
@@ -128,7 +129,15 @@ const HeroSection = () => {
                 Swati Paul
               </h1>
               <p> I Am A Frontend Developer</p>
-              <Button>Get Resume</Button>
+              <a
+                href='./Updated_CV.pdf'
+                download
+                style={{ color: "inherit", textDecoration: "inherit" }}>
+                <Button>
+                  Get Resume
+                  <DownloadIcon />
+                </Button>
+              </a>
             </div>
           </Grid>
           <Grid item xs={12} sm={6}>
@@ -171,7 +180,7 @@ const HeroSection = () => {
       </div>
 
       {/* SKILLS */}
-      <div>
+      <div className='skill_sectioner'>
         <section id='skills' className='skill_section'>
           <div className='container px-5 py-10 mx-auto'>
             <div className='text-center mb-20'>
@@ -195,7 +204,11 @@ const HeroSection = () => {
                         style={{ textAlign: "left" }}>
                         <VerifiedIcon
                           className='text-green-400 w-6 h-6 flex-shrink-0 mr-4'
-                          style={{ color: "aquamarine", padding: "0px 10px" }}
+                          style={{
+                            color: "aquamarine",
+                            padding: "0px 10px",
+                            verticalAlign: "top",
+                          }}
                         />
                         <span
                           className='title-font font-medium'
@@ -213,7 +226,7 @@ const HeroSection = () => {
       </div>
 
       {/* PROJECT */}
-      <div>
+      <div className='project_section'>
         <section id='projects' className='text-gray-400 bg-gray-900 body-font'>
           <div className='container px-5 py-10 mx-auto text-center lg:px-40'>
             <div className='flex flex-col w-full mb-20'>
@@ -244,12 +257,10 @@ const HeroSection = () => {
                           alt='gallery'
                           className=''
                           src={item.image}
-                          style={{ width: "50%" }}
+                          style={{ width: "57%" }}
                         />
                         <div className=''>
-                          <h2 className='tracking-widest text-sm title-font font-medium text-green-400 mb-1'>
-                            {item.subtitle}
-                          </h2>
+                          <h6>{item.subtitle}</h6>
                           <p
                             className='leading-relaxed'
                             style={{ color: "white" }}>
@@ -268,36 +279,98 @@ const HeroSection = () => {
       {/* TESTIMONIALS */}
       <div className='testimonial_section'>
         <section id='skills' className='skill_section'>
-          <div className='container px-5 py-10 mx-auto'>
-            <div className='text-center mb-20'>
-              <h2 className='sm:text-4xl text-3xl font-medium title-font text-white mb-4'>
-                Testimonials
-                <Slider {...settings}>
-                  {/* <div><img src={ConfigFile.BaseUrl+filteredName} alt="" /> </div> */}
-
-                  {testimonial.map((item, index) => (
-                    <div>
-                      <p className='leading-relaxed mb-6'>{item.quote}</p>
-                      <div className='inline-flex items-center'>
-                        <img
-                          alt='testimonial'
-                          src={item.image}
-                          style={{ width: "10%" }}
-                          className='w-12 rounded-full flex-shrink-0 object-cover object-center'
-                        />
-                        <span className='flex-grow flex flex-col pl-4'>
-                          <span className='title-font font-medium text-white'>
-                            {item.name}
-                          </span>
-                        </span>
-                      </div>
-                    </div>
-                  ))}
-                </Slider>
-              </h2>
+          <div>
+            <h2 style={{ margin: "1rem 0rem" }}>Testimonials </h2>
+            <div className='content'>
+              <Slider {...sliderSettings} ref={setSliderRef}>
+                {hotelCards.map((card, index) => (
+                  <div className='cart' key={index}>
+                    <img
+                      alt={card.title}
+                      src={card.imageSrc}
+                      width='100'
+                      height='100'
+                    />
+                    <h6>{card.title}</h6>
+                    <p>{card.description}</p>
+                  </div>
+                ))}
+              </Slider>
             </div>
           </div>
         </section>
+      </div>
+      {/* CONTACT */}
+      <div className='contact_section'>
+        <div className='contact_container'>
+          <section id='contact' className='relative'>
+            <div>
+              <h6 style={{ margin: "1rem 0rem" }}>Contact Me </h6>
+              <Grid container spacing={2} style={{ marginTop: "2rem" }}>
+                <Grid item xs={12} sm={6}>
+                  <div>
+                    <a
+                      target='_blank'
+                      rel='noopener noreferrer'
+                      style={{ color: "inherit", textDecoration: "inherit" }}
+                      href='https://www.linkedin.com/in/swati-paul-2760701bb/'
+                      className='contact_link'>
+                      <LinkedInIcon />
+                      <h6>LinkedIn</h6>
+                    </a>
+                    <a
+                      target='_blank'
+                      rel='noopener noreferrer'
+                      className='contact_link'
+                      style={{ color: "inherit", textDecoration: "inherit" }}
+                      href='swatipaul047@gmail.com'>
+                      <MailIcon />
+                      <h6>Email</h6>
+                    </a>
+                    <a
+                      target='_blank'
+                      rel='noopener noreferrer'
+                      className='contact_link'
+                      style={{ color: "inherit", textDecoration: "inherit" }}
+                      href='swatipaul047@gmail.com'>
+                      <TelegramIcon />
+                      <h6>Telegram</h6>
+                    </a>
+                  </div>
+                </Grid>
+                <Grid item xs={12} sm={6}>
+                  <form netlify name='contact' className='contact_form'>
+                    <h2>Hire Me</h2>
+                    <p className='leading-relaxed mb-5'>
+                      Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                      Illum suscipit officia aspernatur veritatis. Asperiores,
+                      aliquid?
+                    </p>
+                    <div className='form_input'>
+                      <div>
+                        <label htmlFor='name'>Name</label>
+                        <input type='text' id='name' name='name' />
+                      </div>
+                      <div>
+                        <label htmlFor='email'>Email</label>
+                        <input type='email' id='email' name='email' />
+                      </div>
+                      <div>
+                        <label htmlFor='message'>Message</label>
+                        <textarea id='message' name='message' />
+                      </div>
+                      <button
+                        type='submit'
+                        className='text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg'>
+                        Submit
+                      </button>
+                    </div>
+                  </form>
+                </Grid>
+              </Grid>
+            </div>
+          </section>
+        </div>
       </div>
     </div>
   );
