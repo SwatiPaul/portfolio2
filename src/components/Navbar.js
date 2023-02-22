@@ -55,9 +55,9 @@ const Navbar = () => {
       <Box sx={{ flexGrow: 1 }}>
         <Grid container spacing={2}>
           <Grid item xs={6} sm={6}>
-            <Link style={{ float: "left" }}>
+            <div style={{ float: "left" }}>
               <img src='./logo.png' alt='logo' />
-            </Link>
+            </div>
             {/* <div className='icon_section'>
               <FacebookIcon />
               <LinkedInIcon />

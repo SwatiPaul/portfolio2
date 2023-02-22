@@ -129,15 +129,15 @@ const HeroSection = () => {
                 Swati Paul
               </h1>
               <p> I Am A Frontend Developer</p>
-              <a
-                // href='./Updated_CV.pdf'
+              {/* <a
+                href='./Updated_CV.pdf'
                 download
-                style={{ color: "inherit", textDecoration: "inherit" }}>
-                <Button>
-                  Get Resume
-                  <DownloadIcon />
-                </Button>
-              </a>
+                style={{ color: "inherit", textDecoration: "inherit" }}> */}
+              <Button>
+                Get Resume
+                <DownloadIcon />
+              </Button>
+              {/* </a> */}
             </div>
           </Grid>
           <Grid item xs={12} sm={6}>
@@ -247,28 +247,28 @@ const HeroSection = () => {
                 style={{ marginTop: "2rem", marginBottom: "2rem" }}>
                 {projects.map((item, index) => (
                   <Grid key={index} item xs={12} sm={4}>
-                    <a
+                    {/* <a
                       // href={project.link}
                       // key={project.image}
                       className=''
-                      key={index}>
-                      <div className='flex relative'>
-                        <img
-                          alt='gallery'
-                          className=''
-                          src={item.image}
-                          style={{ width: "57%" }}
-                        />
-                        <div className=''>
-                          <h6>{item.subtitle}</h6>
-                          <p
-                            className='leading-relaxed'
-                            style={{ color: "white" }}>
-                            {item.description}
-                          </p>
-                        </div>
+                      key={index}> */}
+                    <div className='flex relative'>
+                      <img
+                        alt='gallery'
+                        className=''
+                        src={item.image}
+                        style={{ width: "57%" }}
+                      />
+                      <div className=''>
+                        <h6>{item.subtitle}</h6>
+                        <p
+                          className='leading-relaxed'
+                          style={{ color: "white" }}>
+                          {item.description}
+                        </p>
                       </div>
-                    </a>
+                    </div>
+                    {/* </a> */}
                   </Grid>
                 ))}
               </Grid>
@@ -309,39 +309,39 @@ const HeroSection = () => {
               <Grid container spacing={2} style={{ marginTop: "2rem" }}>
                 <Grid item xs={12} sm={6}>
                   <div>
-                    <a
+                    {/* <a
                       target='_blank'
                       rel='noopener noreferrer'
                       style={{ color: "inherit", textDecoration: "inherit" }}
                       // href='https://www.linkedin.com/in/swati-paul-2760701bb/'
-                      className='contact_link'>
-                      <LinkedInIcon />
-                      <h6>LinkedIn</h6>
-                    </a>
-                    <a
+                      className='contact_link'> */}
+                    <LinkedInIcon />
+                    <h6>LinkedIn</h6>
+                    {/* </a> */}
+                    {/* <a
                       target='_blank'
                       rel='noopener noreferrer'
                       className='contact_link'
                       style={{ color: "inherit", textDecoration: "inherit" }}
-                      // href=''
-                    >
-                      <MailIcon />
-                      <h6>Email</h6>
-                    </a>
-                    <a
+                      href=''
+                      > */}
+                    <MailIcon />
+                    <h6>Email</h6>
+                    {/* </a> */}
+                    {/* <a
                       target='_blank'
                       rel='noopener noreferrer'
                       className='contact_link'
                       style={{ color: "inherit", textDecoration: "inherit" }}
-                      // href='#'
-                    >
-                      <TelegramIcon />
-                      <h6>Telegram</h6>
-                    </a>
+                      href='#'
+                      > */}
+                    <TelegramIcon />
+                    <h6>Telegram</h6>
+                    {/* </a> */}
                   </div>
                 </Grid>
                 <Grid item xs={12} sm={6}>
-                  <form netlify name='contact' className='contact_form'>
+                  <form name='contact' className='contact_form'>
                     <h2>Hire Me</h2>
                     <p className='leading-relaxed mb-5'>
                       Lorem ipsum dolor sit amet consectetur, adipisicing elit.
