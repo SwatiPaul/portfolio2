@@ -130,7 +130,7 @@ const HeroSection = () => {
               </h1>
               <p> I Am A Frontend Developer</p>
               <a
-                href='./Updated_CV.pdf'
+                // href='./Updated_CV.pdf'
                 download
                 style={{ color: "inherit", textDecoration: "inherit" }}>
                 <Button>
@@ -313,7 +313,7 @@ const HeroSection = () => {
                       target='_blank'
                       rel='noopener noreferrer'
                       style={{ color: "inherit", textDecoration: "inherit" }}
-                      href='https://www.linkedin.com/in/swati-paul-2760701bb/'
+                      // href='https://www.linkedin.com/in/swati-paul-2760701bb/'
                       className='contact_link'>
                       <LinkedInIcon />
                       <h6>LinkedIn</h6>
@@ -323,7 +323,8 @@ const HeroSection = () => {
                       rel='noopener noreferrer'
                       className='contact_link'
                       style={{ color: "inherit", textDecoration: "inherit" }}
-                      href='swatipaul047@gmail.com'>
+                      // href=''
+                    >
                       <MailIcon />
                       <h6>Email</h6>
                     </a>
@@ -332,7 +333,8 @@ const HeroSection = () => {
                       rel='noopener noreferrer'
                       className='contact_link'
                       style={{ color: "inherit", textDecoration: "inherit" }}
-                      href='swatipaul047@gmail.com'>
+                      // href='#'
+                    >
                       <TelegramIcon />
                       <h6>Telegram</h6>
                     </a>
