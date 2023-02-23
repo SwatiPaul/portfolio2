@@ -1,20 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { styled } from "@mui/material/styles";
 import Box from "@mui/material/Box";
-import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
-import FacebookIcon from "@mui/icons-material/Facebook";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import WhatsAppIcon from "@mui/icons-material/WhatsApp";
-import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
-import Tooltip from "@mui/material/Tooltip";
-import MenuItem from "@mui/material/MenuItem";
-import Typography from "@mui/material/Typography";
-import Menu from "@mui/material/Menu";
 import IconButton from "@mui/material/IconButton";
-import { Link } from "react-router-dom";
-import { ConfigFile } from "../service/ConfigFile";
+import MenuIcon from "@mui/icons-material/Menu";
 
 const Navbar = () => {
   const pages = ["HOME", "ABOUT", "PROJECT", "CONTACT ME"];
@@ -55,8 +44,8 @@ const Navbar = () => {
       <Box sx={{ flexGrow: 1 }}>
         <Grid container spacing={2}>
           <Grid item xs={6} sm={6}>
-            <div style={{ float: "left" }}>
-              <img src='./logo.png' alt='logo' />
+            <div>
+              <img src='./logo2.png' alt='logo' className='portfolio_logo' />
             </div>
             {/* <div className='icon_section'>
               <FacebookIcon />
@@ -70,7 +59,8 @@ const Navbar = () => {
                 flexGrow: 1,
                 display: { xs: "block", md: "flex" },
                 float: "right",
-              }}>
+              }}
+              className='navbar'>
               {pages.map((page) => (
                 <Button
                   key={page}
@@ -86,56 +76,16 @@ const Navbar = () => {
                 </Button>
               ))}
             </Box>
-            {/* <Box sx={{ flexGrow: 0 }}>
-              <Tooltip title='Open settings'>
-                <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                  <Avatar alt='Remy Sharp' src='/static/images/avatar/2.jpg' />
-                </IconButton>
-              </Tooltip>
-              <Menu
-                sx={{ mt: "45px" }}
-                id='menu-appbar'
-                anchorEl={anchorElUser}
-                anchorOrigin={{
-                  vertical: "top",
-                  horizontal: "right",
-                }}
-                keepMounted
-                transformOrigin={{
-                  vertical: "top",
-                  horizontal: "right",
-                }}
-                open={Boolean(anchorElUser)}
-                onClose={handleCloseUserMenu}>
-                {settings.map((setting) => (
-                  <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                    <Typography textAlign='center'>{setting}</Typography>
-                  </MenuItem>
-                ))}
-              </Menu>
-            </Box> */}
-            {/* <Box sx={{ display: "flex" }}>
-              <Grid item xs={2}>
-                <div className='nav_item'>
-                  <h6>Home</h6>
-                </div>
-              </Grid>
-              <Grid item xs={2}>
-                <div className='nav_item'>
-                  <h6>About</h6>
-                </div>
-              </Grid>
-              <Grid item xs={2}>
-                <div className='nav_item'>
-                  <h6>Project</h6>
-                </div>
-              </Grid>
-              <Grid item xs={2}>
-                <div className='nav_item'>
-                  <h6>contact me</h6>
-                </div>
-              </Grid>
-            </Box> */}
+
+            <IconButton
+              size='large'
+              edge='start'
+              color='inherit'
+              aria-label='menu'
+              sx={{ mr: 2 }}
+              className='bar_icon'>
+              <MenuIcon />
+            </IconButton>
           </Grid>
         </Grid>
       </Box>

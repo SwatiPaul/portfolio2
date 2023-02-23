@@ -13,11 +13,25 @@
 }
 .header img {
   width: 11%;
-  margin-left: -21rem;
+  margin-left: -25rem;
 }
 .header button:hover {
   border: 1px solid aquamarine;
 }
+.portfolio_logo {
+  border: 2px solid white;
+  border-radius: 15%;
+  /* padding: 10px; */
+  width: 8% !important;
+  box-shadow: 0px 0px 10px 0px #5cd3c2;
+  margin: 0.5rem 0rem;
+  transition: 0.3s;
+}
+.portfolio_logo:hover {
+  padding: 5px;
+  box-shadow: 0px 0px 10px 4px aquamarine;
+}
+
 .icon_section {
   text-align: left;
   padding-top: 10px;
@@ -79,12 +93,13 @@
   background: #272727;
   padding-top: 2rem;
   padding-bottom: 2rem;
+  position: relative;
 }
 .project_section h6 {
-  font-size: 15px;
-  margin: 12px;
+  font-size: 17px;
+  margin: 10px;
   font-family: sans-serif;
-  color: aquamarine;
+  color: black;
   font-weight: 100;
 }
 .skill_sectioner {
@@ -92,16 +107,18 @@
   padding-bottom: 2rem;
 }
 h1 {
-  color: #dedede;
+  color: #fff;
   font-family: sans-serif;
   font-size: 60px;
   text-shadow: 1px 1px #6bffd4;
 }
-p {
-  color: #dedede;
-  font-family: cursive;
-  font-size: 20px;
-  text-shadow: 2px 1px #5a5f5d;
+.Typewriter {
+  color: #7fffd4;
+  font-family: sans-serif;
+  font-size: 28px;
+  /* text-shadow: 2px 2px #333333; */
+  margin: 2rem 0rem;
+  font-weight: 700;
 }
 .profile_img {
   position: relative;
@@ -148,6 +165,10 @@ p {
   padding-top: 0px;
   padding-bottom: 0px;
   margin: 0px;
+}
+.unquote_img {
+  width: "80%";
+  transform: rotate(180deg);
 }
 .about_container {
   padding-top: 4rem;
@@ -197,8 +218,10 @@ p {
   font-size: 15px;
   text-align: justify;
   text-shadow: none;
-  font-family: cursive;
+  font-family: unset;
   font-weight: 100;
+  color: white;
+  line-height: 1.4rem;
 }
 .skill_section {
   padding-top: 4rem;
@@ -216,7 +239,9 @@ p {
   width: 55%;
   color: white;
   text-shadow: none;
-  font-size: 16px;
+  font-size: 18px;
+  font-family: unset;
+  font-weight: 300;
 }
 .skill_grid {
   margin: auto;
@@ -241,11 +266,34 @@ p {
 }
 #projects p {
   margin: auto;
-  width: 55%;
+  width: 95%;
   color: white;
   text-shadow: none;
   font-size: 16px;
+  margin-top: 1rem;
+  font-family: unset;
+  font-weight: 100;
+  line-height: 1.45rem;
 }
+.project_gallery {
+  border-radius: 1%;
+  /* border: 4px solid rgb(77, 68, 68); */
+  width: 80%;
+}
+.project_details {
+  margin-top: -2rem !important;
+  width: 75%;
+  margin: auto;
+
+  left: 2%;
+  background: rgb(255 255 255 / 3%);
+  box-shadow: 0 1px 10px 0px #6bffd4;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
 .cart {
   width: 80% !important;
   border: 1px solid gray;
@@ -277,7 +325,6 @@ p {
   position: relative;
   padding-top: 2rem;
   padding-bottom: 2rem;
-  background: #272727;
 }
 .contact_container {
   width: 80%;
@@ -301,12 +348,14 @@ p {
   font-weight: 100;
 }
 .contact_form p {
-  font-family: sans-serif;
   text-shadow: none;
   font-size: 15px;
-  width: 70%;
+  width: 80%;
   margin: auto;
-  padding: 1rem 0rem;
+  padding: 1rem 0rem 2rem 0rem;
+  color: white;
+  font-family: unset;
+  font-weight: 100;
 }
 .form_input {
   align-items: flex-start;
@@ -351,7 +400,7 @@ p {
   padding: 5px;
 }
 .contact_link {
-  width: 60%;
+  width: 90%;
   border: 1px solid aquamarine;
   padding: 10px;
   margin: 1rem 0rem;
@@ -374,4 +423,96 @@ p {
   margin-left: 1rem;
   color: darkgray;
   font-family: sans-serif;
+}
+.footer {
+  margin: auto;
+  width: 99%;
+  text-align: center;
+  color: white;
+  font-size: 17px;
+  position: relative;
+  font-family: sans-serif;
+  font-weight: 100 !important;
+  background: #272727;
+  padding: 5px;
+}
+.bar_icon {
+  display: none !important;
+}
+@media only screen and (max-width: 766px) {
+  .navbar {
+    display: none !important;
+  }
+  .header .bar_icon {
+    display: block !important;
+    position: absolute !important;
+    top: 0px;
+    right: 0px;
+  }
+  .is-sticky {
+    /* display: block; */
+    padding: 10px !important;
+    /* animation: 500ms ease-in-out 0s normal none 1 running fadeInUp !important; */
+  }
+  .is-sticky .bar_icon {
+    display: block !important;
+    position: absolute !important;
+    /* top: 0px;
+    right: 0px; */
+    top: -5px;
+    right: 20px;
+  }
+  .bar_icon svg {
+    font-size: 30px;
+  }
+  .hero_section {
+    left: 0% !important;
+    top: 5% !important;
+  }
+  .Typewriter {
+    font-size: 25px;
+  }
+  .profile_img::before {
+    display: none;
+  }
+  .profile_img div::after {
+    display: none;
+  }
+  .profile_img img {
+    display: none;
+  }
+  .hero_container {
+    margin: 0rem !important;
+  }
+  .unquote_img {
+    width: 80% !important;
+  }
+  .skill_section {
+    padding-top: 0rem !important;
+  }
+  .skill_section p {
+    width: 95% !important;
+  }
+  .contact_form {
+    padding: 0px !important;
+  }
+  .contact_form p {
+    padding: 0rem 0rem 2rem 0rem;
+    font-size: 14px;
+    width: 90% !important;
+  }
+  .form_input input {
+    margin-left: 8% !important;
+  }
+  .form_input textarea {
+    margin-left: 8% !important;
+  }
+  .form_input label {
+    font-size: 12px;
+    align-self: center;
+  }
+  .form_input button {
+    width: 25%;
+    margin-bottom: 0.5rem;
+  }
 }

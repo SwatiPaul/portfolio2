@@ -14,6 +14,8 @@ import { Link } from "react-router-dom";
 import MailIcon from "@mui/icons-material/Mail";
 import TelegramIcon from "@mui/icons-material/Telegram";
 import DownloadIcon from "@mui/icons-material/Download";
+import Typewriter from "typewriter-effect";
+import Footer from "../components/Footer";
 
 const HeroSection = () => {
   const [sliderRef, setSliderRef] = useState(null);
@@ -53,6 +55,10 @@ const HeroSection = () => {
       id: 7,
       skill: "Deployment",
     },
+    {
+      id: 8,
+      skill: "Web Performance Optimization",
+    },
   ];
   const projects = [
     {
@@ -60,31 +66,28 @@ const HeroSection = () => {
       image: "./Capture.JPG",
       subtitle: "Software and Web Application site",
       title: "ghgyyyyyyyyyy",
-      description: "wwwwwwwwwwwwww",
+      description:
+        "A web appplication for visualizing service of a product based company.",
+      skill: "Html   css   Javasript  Bootstrap  jQuery",
       link: "https://pythonbootcamp.com",
     },
     {
       id: 2,
-      image: "./Capture2.JPG",
-      subtitle: "ppppppppppp",
+      image: "./Capture2.PNG",
+      subtitle: "Car and Home Booking Application",
       title: "uuuuuuuuuuuu",
-      description: "ooooooooooooo",
+      description:
+        "A rental booking appplication of different categories ,searched by featured and manual.",
+      skill: "ReactJs   ReactBootstrap   NodeJs ",
       link: "https://pythonbootcamp.com",
     },
     {
       id: 3,
-      image: "./bikash.jpg",
-      subtitle: "ppppppppppp",
+      image: "./Capture.PNG",
+      subtitle: "Vehicle Booking Application",
       title: "uuuuuuuuuuuu",
-      description: "ooooooooooooo",
-      link: "https://pythonbootcamp.com",
-    },
-    {
-      id: 4,
-      image: "./bikash.jpg",
-      subtitle: "ppppppppppp",
-      title: "uuuuuuuuuuuu",
-      description: "ooooooooooooo",
+      description: "A web appplication for booking vehicles",
+      skill: "Html   css   Javasript  Bootstrap jQuery",
       link: "https://pythonbootcamp.com",
     },
   ];
@@ -123,21 +126,28 @@ const HeroSection = () => {
         <Grid container spacing={2}>
           <Grid item xs={12} sm={6}>
             <div className='hero_section'>
-              <h1>
+              <h1 className='revealUp'>
                 Hello ! I am
                 <br />
                 Swati Paul
               </h1>
-              <p> I Am A Frontend Developer</p>
-              {/* <a
+              {/* <p> I Am A Frontend Developer </p> */}
+              <Typewriter
+                options={{
+                  strings: ["I Am A Frontend Developer", "I Am A Designer"],
+                  autoStart: true,
+                  loop: true,
+                }}
+              />
+              <a
                 href='./Updated_CV.pdf'
                 download
-                style={{ color: "inherit", textDecoration: "inherit" }}> */}
-              <Button>
-                Get Resume
-                <DownloadIcon />
-              </Button>
-              {/* </a> */}
+                style={{ color: "inherit", textDecoration: "inherit" }}>
+                <Button>
+                  Get Resume
+                  <DownloadIcon />
+                </Button>
+              </a>
             </div>
           </Grid>
           <Grid item xs={12} sm={6}>
@@ -157,23 +167,33 @@ const HeroSection = () => {
       <div className='about_container'>
         <div className='about_section'>
           <Grid container spacing={2}>
-            <Grid item xs={12} sm={6}></Grid>
+            <Grid item xs={3} sm={3}>
+              <img
+                src='./quote.png'
+                alt='profile_img'
+                style={{ width: "80%" }}
+              />
+            </Grid>
             <Grid item xs={12} sm={6}>
               <div className='about_content'>
-                <h3>ABOUT ME</h3>
+                <h3>About Me</h3>
                 <p>
-                  Lorem Ipsum is simply dummy text of the printing and
-                  typesetting industry. Lorem Ipsum has been the industry's
-                  standard dummy text ever since the 1500s, when an unknown
-                  printer took a galley of type and scrambled it to make a type
-                  specimen book. It has survived not only five centuries, but
-                  also the leap into electronic typesetting, remaining
-                  essentially unchanged. It was popularised in the 1960s with
-                  the release of Letraset sheets containing Lorem Ipsum
-                  passages, and more recently with desktop publishing software
-                  like Aldus PageMaker including versions of Lorem Ipsum.
+                  Creative web developer with 1+ years of experience. Uses UI/UX
+                  to improve web-based technology design, functionality and
+                  usability.
+                  <br />
+                  Offers progressive experience from concept and design through
+                  testing, implementation and client updates. Diligent about
+                  producing exceptionally clean, strong and secure code.
                 </p>
               </div>
+            </Grid>
+            <Grid item xs={3} sm={3}>
+              <img
+                src='./quote.png'
+                alt='profile_img'
+                className='unquote_img'
+              />
             </Grid>
           </Grid>
         </div>
@@ -183,15 +203,13 @@ const HeroSection = () => {
       <div className='skill_sectioner'>
         <section id='skills' className='skill_section'>
           <div className='container px-5 py-10 mx-auto'>
-            <div className='text-center mb-20'>
-              <h2 className='sm:text-4xl text-3xl font-medium title-font text-white mb-4'>
+            <div>
+              <h2>
                 Skills &amp; Technologies
                 {/* SKILLS &amp; TECHNOLOGIES */}
               </h2>
-              <p className='text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto'>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi
-                sit ipsa delectus eum quo voluptas aspernatur accusantium
-                distinctio possimus est.
+              <p>
+                Some of the essential frontend skills that I am working with :
               </p>
             </div>
             <div className='skill_grid'>
@@ -232,13 +250,9 @@ const HeroSection = () => {
             <div className='flex flex-col w-full mb-20'>
               {/* <CodeIcon className='mx-auto inline-block w-10 mb-4' /> */}
               <h2 className='sm:text-4xl text-3xl font-medium title-font mb-4 text-white'>
-                Apps I've Built
+                Some Things I’ve Built
               </h2>
-              <p className='lg:w-2/3 mx-auto leading-relaxed text-base'>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Explicabo facilis repellat ab cupiditate alias vero aliquid
-                obcaecati quisquam fuga dolore.
-              </p>
+              <p>Some of live projects that I had worked </p>
             </div>
             <div className=' '>
               <Grid
@@ -255,16 +269,20 @@ const HeroSection = () => {
                     <div className='flex relative'>
                       <img
                         alt='gallery'
-                        className=''
+                        className='project_gallery'
                         src={item.image}
-                        style={{ width: "57%" }}
                       />
-                      <div className=''>
+                      <div className='project_details'>
                         <h6>{item.subtitle}</h6>
                         <p
                           className='leading-relaxed'
                           style={{ color: "white" }}>
                           {item.description}
+                        </p>
+                        <p
+                          className='leading-relaxed'
+                          style={{ color: "white", paddingBottom: "1rem" }}>
+                          {item.skill}
                         </p>
                       </div>
                     </div>
@@ -277,7 +295,7 @@ const HeroSection = () => {
         </section>
       </div>
       {/* TESTIMONIALS */}
-      <div className='testimonial_section'>
+      {/* <div className='testimonial_section'>
         <section id='skills' className='skill_section'>
           <div>
             <h2 style={{ margin: "1rem 0rem" }}>Testimonials </h2>
@@ -299,7 +317,7 @@ const HeroSection = () => {
             </div>
           </div>
         </section>
-      </div>
+      </div> */}
       {/* CONTACT */}
       <div className='contact_section'>
         <div className='contact_container'>
@@ -315,8 +333,10 @@ const HeroSection = () => {
                       style={{ color: "inherit", textDecoration: "inherit" }}
                       // href='https://www.linkedin.com/in/swati-paul-2760701bb/'
                       className='contact_link'> */}
-                    <LinkedInIcon />
-                    <h6>LinkedIn</h6>
+                    <div className='contact_link'>
+                      <LinkedInIcon />
+                      <h6>LinkedIn</h6>
+                    </div>
                     {/* </a> */}
                     {/* <a
                       target='_blank'
@@ -325,8 +345,10 @@ const HeroSection = () => {
                       style={{ color: "inherit", textDecoration: "inherit" }}
                       href=''
                       > */}
-                    <MailIcon />
-                    <h6>Email</h6>
+                    <div className='contact_link'>
+                      <MailIcon />
+                      <h6>Email</h6>
+                    </div>
                     {/* </a> */}
                     {/* <a
                       target='_blank'
@@ -335,18 +357,20 @@ const HeroSection = () => {
                       style={{ color: "inherit", textDecoration: "inherit" }}
                       href='#'
                       > */}
-                    <TelegramIcon />
-                    <h6>Telegram</h6>
+                    <div className='contact_link'>
+                      <TelegramIcon />
+                      <h6>Telegram</h6>
+                    </div>
                     {/* </a> */}
                   </div>
                 </Grid>
                 <Grid item xs={12} sm={6}>
                   <form name='contact' className='contact_form'>
-                    <h2>Hire Me</h2>
+                    <h2>Get In Touch</h2>
                     <p className='leading-relaxed mb-5'>
-                      Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                      Illum suscipit officia aspernatur veritatis. Asperiores,
-                      aliquid?
+                      Although I’m currently looking for new opportunities, my
+                      inbox is always open. Whether you have a question or just
+                      want to say hi, I’ll try my best to get back to you!
                     </p>
                     <div className='form_input'>
                       <div>
@@ -374,6 +398,7 @@ const HeroSection = () => {
           </section>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };
