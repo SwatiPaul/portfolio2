@@ -327,41 +327,33 @@ const HeroSection = () => {
               <Grid container spacing={2} style={{ marginTop: "2rem" }}>
                 <Grid item xs={12} sm={6}>
                   <div>
-                    {/* <a
+                    <a
                       target='_blank'
                       rel='noopener noreferrer'
                       style={{ color: "inherit", textDecoration: "inherit" }}
                       // href='https://www.linkedin.com/in/swati-paul-2760701bb/'
-                      className='contact_link'> */}
-                    <div className='contact_link'>
+                      className='contact_link'>
                       <LinkedInIcon />
                       <h6>LinkedIn</h6>
-                    </div>
-                    {/* </a> */}
-                    {/* <a
+                    </a>
+                    <a
                       target='_blank'
                       rel='noopener noreferrer'
                       className='contact_link'
                       style={{ color: "inherit", textDecoration: "inherit" }}
-                      href=''
-                      > */}
-                    <div className='contact_link'>
+                      href='#'>
                       <MailIcon />
                       <h6>Email</h6>
-                    </div>
-                    {/* </a> */}
-                    {/* <a
+                    </a>
+                    <a
                       target='_blank'
                       rel='noopener noreferrer'
                       className='contact_link'
                       style={{ color: "inherit", textDecoration: "inherit" }}
-                      href='#'
-                      > */}
-                    <div className='contact_link'>
+                      href='#'>
                       <TelegramIcon />
                       <h6>Telegram</h6>
-                    </div>
-                    {/* </a> */}
+                    </a>
                   </div>
                 </Grid>
                 <Grid item xs={12} sm={6}>
