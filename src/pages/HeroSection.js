@@ -331,7 +331,7 @@ const HeroSection = () => {
                       target='_blank'
                       rel='noopener noreferrer'
                       style={{ color: "inherit", textDecoration: "inherit" }}
-                      // href='https://www.linkedin.com/in/swati-paul-2760701bb/'
+                      href='https://www.linkedin.com/in/swati-paul-2760701bb/'
                       className='contact_link'>
                       <LinkedInIcon />
                       <h6>LinkedIn</h6>

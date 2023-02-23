@@ -515,4 +515,13 @@ h1 {
     width: 25%;
     margin-bottom: 0.5rem;
   }
+  .about_container::before {
+    display: none;
+  }
+  .about_container::after {
+    display: none;
+  }
+  .contact_link {
+    width: 95% !important;
+  }
 }
