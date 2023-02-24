@@ -96,11 +96,12 @@
   position: relative;
 }
 .project_section h6 {
-  font-size: 17px;
-  margin: 10px;
+  font-size: 16px;
+  margin: 5px;
   font-family: sans-serif;
-  color: black;
+  color: snow;
   font-weight: 100;
+  text-align: initial;
 }
 .skill_sectioner {
   padding-top: 2rem;
@@ -167,7 +168,7 @@ h1 {
   margin: 0px;
 }
 .unquote_img {
-  width: "80%";
+  width: 80%;
   transform: rotate(180deg);
 }
 .about_container {
@@ -216,7 +217,7 @@ h1 {
 }
 .about_content p {
   font-size: 15px;
-  text-align: justify;
+  text-align: left;
   text-shadow: none;
   font-family: unset;
   font-weight: 100;
@@ -264,16 +265,17 @@ h1 {
   font-weight: 100;
   margin: 0px;
 }
-#projects p {
+.project_details p {
   margin: auto;
   width: 95%;
   color: white;
   text-shadow: none;
-  font-size: 16px;
-  margin-top: 1rem;
+  font-size: 14px;
+  /* margin-top: 1rem; */
   font-family: unset;
   font-weight: 100;
-  line-height: 1.45rem;
+  line-height: 1.4rem;
+  text-align: initial;
 }
 .project_gallery {
   border-radius: 1%;
@@ -281,19 +283,23 @@ h1 {
   width: 80%;
 }
 .project_details {
-  margin-top: -2rem !important;
-  width: 75%;
+  margin-top: 0rem !important;
+  width: 80%;
   margin: auto;
-
   left: 2%;
   background: rgb(255 255 255 / 3%);
-  box-shadow: 0 1px 10px 0px #6bffd4;
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-  border-radius: 10px;
+  /* box-shadow: 0 1px 10px 0px #6bffd4; */
+  /* backdrop-filter: blur(4px); */
+  /* -webkit-backdrop-filter: blur(4px); */
+  border-radius: 4px;
   border: 1px solid rgba(255, 255, 255, 0.18);
+  text-align: center;
+  transition: 0.3s;
 }
-
+.project_details:hover {
+  padding: 6px;
+  box-shadow: 0 2px 10px 0px #6bffd4;
+}
 .cart {
   width: 80% !important;
   border: 1px solid gray;
@@ -439,9 +445,23 @@ h1 {
 .bar_icon {
   display: none !important;
 }
+.scroll-to-top:hover {
+  background-color: #7fffd4;
+}
+
 @media only screen and (max-width: 766px) {
   .navbar {
     display: none !important;
+  }
+  .navbar_shown {
+    display: block !important;
+    width: 23rem;
+    background: #616161;
+    position: absolute;
+    right: -14px;
+    z-index: 999;
+    top: 68px;
+    transition: 0.8s;
   }
   .header .bar_icon {
     display: block !important;
@@ -459,8 +479,12 @@ h1 {
     position: absolute !important;
     /* top: 0px;
     right: 0px; */
-    top: -5px;
-    right: 20px;
+    top: 12px;
+    right: 0px;
+  }
+  .scroll-to-top {
+    right: 25px;
+    bottom: 25px;
   }
   .bar_icon svg {
     font-size: 30px;
@@ -523,5 +547,14 @@ h1 {
   }
   .contact_link {
     width: 95% !important;
+  }
+  .about_content {
+    padding: 0rem;
+  }
+  .header img {
+    margin-left: -5rem;
+  }
+  .portfolio_logo {
+    width: 20% !important;
   }
 }

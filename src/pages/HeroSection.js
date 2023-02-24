@@ -16,6 +16,7 @@ import TelegramIcon from "@mui/icons-material/Telegram";
 import DownloadIcon from "@mui/icons-material/Download";
 import Typewriter from "typewriter-effect";
 import Footer from "../components/Footer";
+import ScrollToTop from "react-scroll-to-top";
 
 const HeroSection = () => {
   const [sliderRef, setSliderRef] = useState(null);
@@ -122,7 +123,7 @@ const HeroSection = () => {
   return (
     <div className='main_container'>
       <Navbar />
-      <div className='hero_container'>
+      <div className='hero_container' id='hero'>
         <Grid container spacing={2}>
           <Grid item xs={12} sm={6}>
             <div className='hero_section'>
@@ -164,7 +165,7 @@ const HeroSection = () => {
         </Grid>
       </div>
       {/* ABOUT */}
-      <div className='about_container'>
+      <div className='about_container' id='about'>
         <div className='about_section'>
           <Grid container spacing={2}>
             <Grid item xs={3} sm={3}>
@@ -200,8 +201,8 @@ const HeroSection = () => {
       </div>
 
       {/* SKILLS */}
-      <div className='skill_sectioner'>
-        <section id='skills' className='skill_section'>
+      <div className='skill_sectioner' id='skills'>
+        <section className='skill_section'>
           <div className='container px-5 py-10 mx-auto'>
             <div>
               <h2>
@@ -244,15 +245,20 @@ const HeroSection = () => {
       </div>
 
       {/* PROJECT */}
-      <div className='project_section'>
+      <div className='project_section' id='projects'>
         <section id='projects' className='text-gray-400 bg-gray-900 body-font'>
           <div className='container px-5 py-10 mx-auto text-center lg:px-40'>
             <div className='flex flex-col w-full mb-20'>
               {/* <CodeIcon className='mx-auto inline-block w-10 mb-4' /> */}
-              <h2 className='sm:text-4xl text-3xl font-medium title-font mb-4 text-white'>
-                Some Things I’ve Built
-              </h2>
-              <p>Some of live projects that I had worked </p>
+              <h2>Some Things I’ve Built</h2>
+              <p
+                style={{
+                  color: "white",
+                  fontFamily: "unset",
+                  fontWeight: 100,
+                }}>
+                Some of live projects that I had worked{" "}
+              </p>
             </div>
             <div className=' '>
               <Grid
@@ -274,14 +280,10 @@ const HeroSection = () => {
                       />
                       <div className='project_details'>
                         <h6>{item.subtitle}</h6>
+                        <p className='leading-relaxed'>{item.description}</p>
                         <p
                           className='leading-relaxed'
-                          style={{ color: "white" }}>
-                          {item.description}
-                        </p>
-                        <p
-                          className='leading-relaxed'
-                          style={{ color: "white", paddingBottom: "1rem" }}>
+                          style={{ fontWeight: 600, paddingBottom: "0.5rem" }}>
                           {item.skill}
                         </p>
                       </div>
@@ -319,9 +321,9 @@ const HeroSection = () => {
         </section>
       </div> */}
       {/* CONTACT */}
-      <div className='contact_section'>
+      <div className='contact_section' id='contact'>
         <div className='contact_container'>
-          <section id='contact' className='relative'>
+          <section className='relative'>
             <div>
               <h6 style={{ margin: "1rem 0rem" }}>Contact Me </h6>
               <Grid container spacing={2} style={{ marginTop: "2rem" }}>
@@ -391,6 +393,7 @@ const HeroSection = () => {
         </div>
       </div>
       <Footer />
+      <ScrollToTop smooth />
     </div>
   );
 };

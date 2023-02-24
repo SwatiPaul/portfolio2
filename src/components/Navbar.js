@@ -4,12 +4,19 @@ import Grid from "@mui/material/Grid";
 import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
-  const pages = ["HOME", "ABOUT", "PROJECT", "CONTACT ME"];
+  const pages = [
+    { id: "#hero", name: "HOME" },
+    { id: "#about", name: "ABOUT" },
+    { id: "#projects", name: "PROJECT" },
+    { id: "#contact", name: "CONTACT ME" },
+  ];
   const settings = ["Profile", "Account", "Dashboard", "Logout"];
   const [anchorElNav, setAnchorElNav] = useState(null);
   const [anchorElUser, setAnchorElUser] = useState(null);
+  const [state, setState] = useState(false);
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -39,6 +46,11 @@ const Navbar = () => {
       : header.classList.remove("is-sticky");
   };
 
+  const NavOpen = () => {
+    console.log("ghghghs");
+    setState(!state);
+  };
+
   return (
     <div className='header' id='myHeader'>
       <Box sx={{ flexGrow: 1 }}>
@@ -62,18 +74,20 @@ const Navbar = () => {
               }}
               className='navbar'>
               {pages.map((page) => (
-                <Button
-                  key={page}
-                  onClick={handleCloseNavMenu}
-                  sx={{
-                    my: 2,
-                    mx: 2,
-                    color: "white",
-                    display: "block",
-                    fontFamily: "cursive",
-                  }}>
-                  {page}
-                </Button>
+                <a href={page.id} style={{ textDecoration: "none" }}>
+                  <Button
+                    key={page}
+                    onClick={handleCloseNavMenu}
+                    sx={{
+                      my: 2,
+                      mx: 2,
+                      color: "white",
+                      display: "block",
+                      fontFamily: "cursive",
+                    }}>
+                    {page.name}
+                  </Button>
+                </a>
               ))}
             </Box>
 
@@ -83,8 +97,35 @@ const Navbar = () => {
               color='inherit'
               aria-label='menu'
               sx={{ mr: 2 }}
-              className='bar_icon'>
+              className='bar_icon'
+              onClick={NavOpen}>
               <MenuIcon />
+              {state === true ? (
+                <Box
+                  sx={{
+                    flexGrow: 1,
+                    display: { xs: "block", md: "flex" },
+                    float: "right",
+                  }}
+                  className='navbar_shown'>
+                  {pages.map((page) => (
+                    <a href={page.id} style={{ textDecoration: "none" }}>
+                      <Button
+                        key={page}
+                        onClick={handleCloseNavMenu}
+                        sx={{
+                          my: 2,
+                          mx: 2,
+                          color: "white",
+                          display: "block",
+                          fontFamily: "cursive",
+                        }}>
+                        {page.name}
+                      </Button>
+                    </a>
+                  ))}
+                </Box>
+              ) : null}
             </IconButton>
           </Grid>
         </Grid>
