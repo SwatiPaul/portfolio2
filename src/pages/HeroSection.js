@@ -141,7 +141,7 @@ const HeroSection = () => {
                 }}
               />
               <a
-                href='./Updated_CV.pdf'
+                href='./SwatiPaul_CV.pdf'
                 download
                 style={{ color: "inherit", textDecoration: "inherit" }}>
                 <Button>
